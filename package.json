@@ -1,0 +1,26 @@
+{
+  "name": "mazerunner",
+  "version": "1.0.0",
+  "description": "MakeRunner es un proyecto de un videojuego de laberintos 2D  creado por estudiantes de 2º año de ¡Superate! utilizando tecnologias como HTML, CSS, Phaser y Javascript.",
+  "main": "index.js",
+  "dependencies": {
+    "eventemitter3": "^5.0.4",
+    "phaser": "^4.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavQ2027/MazeRunner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DavQ2027/MazeRunner/issues"
+  },
+  "homepage": "https://github.com/DavQ2027/MazeRunner#readme"
+}

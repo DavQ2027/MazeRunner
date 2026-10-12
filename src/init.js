@@ -17,7 +17,7 @@ const config = {
     },
 
     //escenas del juego
-    scene:[Win ,Menu, Nivel1, Nivel2, Nivel3, GameOver],
+    scene:[Menu, Nivel1, Nivel2, Nivel3, GameOver, Win],
     //fisicas
     physics: {
         default: 'arcade',
