@@ -1,21 +1,30 @@
 
+
 const TILE = 32;
 
-// Mapa del nivel 1 en matiz que luego se traduce en los objetos del laberinto 
+// Mapa del nivel 3 en matiz
 const mapa = [
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [1,2,2,0,1,2,2,2,2,2,1,2,2,2,1],
-    [1,2,1,0,1,2,1,1,1,2,1,2,1,2,1],
-    [1,2,1,3,2,2,2,2,2,2,2,2,1,2,1],
-    [1,2,1,1,1,2,1,0,1,2,1,1,1,2,1],
-    [1,2,2,2,2,2,1,0,1,2,2,2,2,2,1],
-    [1,1,1,2,1,2,1,0,1,2,1,2,1,1,1],
-    [1,4,2,2,1,2,2,0,2,2,1,2,2,4,1],
-    [1,1,1,2,1,2,1,1,1,2,1,2,1,1,1],
-    [1,2,2,2,2,2,2,2,2,2,2,2,2,2,1],
-    [1,2,1,1,1,2,1,0,1,2,1,1,1,2,1],
-    [1,2,2,2,2,2,2,2,2,0,2,2,2,2,1],
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 3, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 4, 1],
+    [1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1],
+    [1, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1],
+    [1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1],
+    [1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1],
+    [1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1],
+    [1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1],
+    [1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1],
+    [1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1],
+    [1, 1, 1, 2, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 2, 1, 1, 1],
+    [1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1],
+    [1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1],
+    [1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1],
+    [1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 2, 1, 1, 1],
+    [1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1],
+    [1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 1, 2, 1],
+    [1, 2, 1, 2, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1],
+    [1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1],
+    [1, 4, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 3, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
 export default class Nivel3 extends Phaser.Scene {
@@ -29,9 +38,11 @@ init(){
 }
 
 preload() {
-    this.load.image('fondo', 'assets/background.jpg');
+    this.load.image('fondo3', 'assets/backgroundrojo.jpg');
     this.load.image('pared', 'assets/Pared.png');
-    this.load.image('titulo', 'assets/titulo.png');
+    this.load.image('enemigo', 'assets/enemigo.png');
+    this.load.audio('nivel3','../assets/nivel3.mp3');
+
 
     this.load.font({
     key: 'Fuente',
@@ -42,6 +53,13 @@ preload() {
 }
 
 create() {
+
+       this.sound.play('nivel3', {
+            loop: true,
+            volume: 0.1
+        });
+    //el fondito
+        this.add.image(this.scale.width/2, this.scale.height/2, 'fondo3').setDisplaySize(this.scale.width, this.scale.height);
 // Calcula el tamaño del mapa y el offset para centrarlo porque si no queda feo en la esquina
 const anchoMapa = mapa[0].length * TILE;   
 const altoMapa  = mapa.length * TILE;      
@@ -103,6 +121,23 @@ this.offsetY = margenSuperior + (this.scale.height - margenSuperior - altoMapa) 
             this.jugador,
             this.paredes
         );
+        
+        //enemigo
+       this.enemigo =  this.enemigo = this.physics.add.sprite(posicionX + 130, posicionY, 'enemigo');
+        this.physics.add.existing(this.enemigo);
+        this.enemigo.body.setCircle(11);
+        this.velocidadEnemigo = 90;
+        this.objetivoEnemigo = null;
+
+         this.physics.add.overlap(
+            this.jugador, this.enemigo,
+                   () => {
+                    this.scene.start('GameOver', { score: this.score });
+                    this.sound.stopAll();
+                   }
+        );
+
+        
 
 
 
@@ -117,9 +152,11 @@ this.offsetY = margenSuperior + (this.scale.height - margenSuperior - altoMapa) 
                 this.score += 10;
              this.textoScore.setText('Score: ' + this.score);
 
-                // Esto hace que si el jugador llega a 840 puntos se pase a la escena de victoria y le pase el puntaje y la escena que acaba de pasar
-                 if (this.score == 840) {
+
+                 if (this.score == 2100) {
         this.scene.start('Win', { score: this.score, Escena: 'XD' });
+        this.sound.stopAll();
+        
     }      
 
 
@@ -131,7 +168,7 @@ this.offsetY = margenSuperior + (this.scale.height - margenSuperior - altoMapa) 
         this.teclas = this.input.keyboard.createCursorKeys();
 
         // Limites del mapa
-  this.physics.world.setBounds(this.offsetX, this.offsetY, anchoMapa, altoMapa);
+         this.physics.world.setBounds(this.offsetX, this.offsetY, anchoMapa, altoMapa);
 
 
         this.physics.world.setBoundsCollision(
@@ -170,15 +207,137 @@ this.offsetY = margenSuperior + (this.scale.height - margenSuperior - altoMapa) 
 
     this.time.delayedCall(100000, () => {
         this.scene.start('GameOver', { score: this.score });
+        this.sound.stopAll();
     }, [], this);
 
 
 
 
-    
 
 
 }
+
+    tileDe(x, y) {
+    return {
+        col: Math.floor((x - this.offsetX) / TILE),
+        fila: Math.floor((y - this.offsetY) / TILE)
+    };
+    }
+
+    centroTile(col, fila) {
+    return {
+        x: this.offsetX + col * TILE + TILE / 2,
+        y: this.offsetY + fila * TILE + TILE / 2
+    };
+    }
+
+
+    BFS(origen, destino){
+        if(origen.col == destino.col && origen.fila == destino.fila){
+            return null;
+        }
+
+        //indica las direccion posibles, solo con 4
+        const diresPosibles = [
+            [1,0], //derecha
+            [-1,0], //izquierda
+            [0,1], //abajo
+            [0,-1] //arriba
+        ]
+
+        const visitado = new Set([origen.fila+','+origen.col]);
+        const cola = [{
+            col: origen.col,
+            fila: origen.fila,
+            primero: null
+        }];
+
+        let seguridad = 0;
+
+        while(cola.length > 0) {
+             if (++seguridad > 1000) {
+        console.error('BFS: demasiadas vueltas, revisa la lógica');
+        return null;
+    }
+            const actuar = cola.shift();
+
+            console.log('explorando', actuar.col, actuar.fila);
+
+            for (const [cambiocolumn, cambiofila] of diresPosibles){
+                const col = actuar.col + cambiocolumn;
+                const fila = actuar.fila+ cambiofila;
+                const clave = fila +','+ col;
+
+                //si sale del mapa lo ignora
+                if(fila < 0 || fila >= mapa.length || col<0 || col >= mapa[0].length){ 
+                    continue;
+                }
+
+                if(mapa[fila][col]===1|| visitado.has(clave)){
+                    continue;
+                }
+                visitado.add(clave);
+
+                const primero = actuar.primero || {col, fila};
+
+                if (col === destino.col && fila == destino.fila) {
+                    return primero;
+                }
+                cola.push({col, fila, primero});
+                
+
+
+            }
+        }
+
+        console.log('BFS sin camino. Tiles visitados:', visitado.size, 'seguridad:', seguridad);
+return null;
+
+        
+
+    }
+
+    moverenemigo(){
+        const cuerpo = this.enemigo.body;
+
+        if(!this.objetivoEnemigo) {
+            const tila = this.tileDe(this.enemigo.x, this.enemigo.y);
+            this.objetivoEnemigo = this.centroTile(tila.col, tila.fila);
+        }
+
+        const distancial = Phaser.Math.Distance.Between(
+            this.enemigo.x, this.enemigo.y,
+            this.objetivoEnemigo.x, this.objetivoEnemigo.y
+        );
+
+        if (distancial < 4){
+            cuerpo.reset(this.objetivoEnemigo.x, this.objetivoEnemigo.y);
+
+            const origen = this.tileDe(this.enemigo.x, this.enemigo.y);
+            const destino = this.tileDe(this.jugador.x, this.jugador.y);
+            const paso = this.BFS(origen, destino);
+
+
+
+            if (paso){
+                this.objetivoEnemigo = this.centroTile(paso.col, paso.fila);
+            }
+
+        }
+
+        this.physics.moveTo(
+            this.enemigo,
+            this.objetivoEnemigo.x,
+            this.objetivoEnemigo.y,
+            this.velocidadEnemigo
+        );
+
+        
+
+    }
+    
+
+
     
 
 
@@ -195,19 +354,38 @@ this.offsetY = margenSuperior + (this.scale.height - margenSuperior - altoMapa) 
 
         if (this.teclas.left.isDown) { 
                 this.jugador.body.setVelocityX(-velocidad);
-        } else if (this.teclas.right.isDown) {
+        }
+         if (this.teclas.right.isDown) {
             this.jugador.body.setVelocityX(velocidad);
         }
-
         if (this.teclas.up.isDown) {
                   this.jugador.body.setVelocityY(-velocidad);
-        } else if (this.teclas.down.isDown) {
+        }
+         if (this.teclas.down.isDown) {
                 this.jugador.body.setVelocityY(velocidad);
         }
 
-        this.jugador.body.velocity.normalize().scale(velocidad);
-    }
+
+        const L = this.tileDe(this.jugador.x, this.jugador.y);
+        const P = this.centroTile(L.col, L.fila);
+        const horizontal = this.teclas.left.isDown || this.teclas.right.isDown;
+        const vertical = this.teclas.up.isDown || this.teclas.down.isDown;
+
+        if(horizontal && !vertical){
+            this.jugador.body.setVelocityY(Phaser.Math.Clamp((P.y - this.jugador.y)*10, -velocidad, velocidad));
+        } else if (vertical && !horizontal){
+            this.jugador.body.setVelocityX(Phaser.Math.Clamp((P.x - this.jugador.x)*10, -velocidad, velocidad));
+        }
+
+        this.moverenemigo();
+
+    
 
     
 
 }
+
+
+}
+
+

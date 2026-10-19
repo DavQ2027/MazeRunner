@@ -27,10 +27,13 @@ preload() {
 
     this.load.image('logo', '../assets/logo.png');
     this.load.image('jugar', '../assets/jugar.png');
+    this.load.image('fondoini', '../assets/fondoinicio.jpg')
 
 }
 
 create() {
+
+     this.add.image(this.scale.width/2, this.scale.height/2, 'fondoini').setDisplaySize(this.scale.width, this.scale.height);
     
 
     this.add.image(this.scale.width / 2, this.scale.height / 2.1 - 100, 'logo').setOrigin(0.5, 0.5).setScale(0.5);

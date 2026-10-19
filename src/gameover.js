@@ -22,6 +22,8 @@ preload() {
     format: 'truetype'
 });
 
+this.load.audio('gameover', 'assets/gameover.mp3')
+
 }
 
 create() {  
@@ -48,6 +50,13 @@ create() {
     boton.on('pointerdown', () => {
         this.scene.start('menu');
     });
+
+    this.sound.play('gameover',{
+        loop:false,
+        volume: 0.9
+    }
+
+    )
 
 
 

@@ -16,12 +16,16 @@ init(datos){
 
 preload() {
     // Carga de recursos
-    this.load.image('fondo', 'assets/background.jpg');
+    this.load.image('fondoXD', 'assets/fondoverdewin.jpg');
     this.load.font({    
         key: 'Fuente',  
         url: '../assets/VCR_OSD_MONO_1.001.ttf',
         format: 'truetype'
     });
+
+    this.load.audio('youwin','../assets/youwin.mp3');
+
+
 
 
 
@@ -30,6 +34,14 @@ preload() {
 }
 
 create() {
+
+    this.add.image(this.scale.width/2, this.scale.height/2, 'fondoXD').setDisplaySize(this.scale.width, this.scale.height);
+
+ 
+
+    
+
+    
 
     //Texto de victoria y puntaje
     this.add.text(this.scale.width / 2, this.scale.height / 2.0 - 100, 'You Win!', {
@@ -74,6 +86,17 @@ create() {
         }
     });
 
+    this.sound.play('youwin', {
+            loop: false,
+            volume: 0.8
+        });
+
+}
+
+update(){
+
+    
+  
 }
 
 }
