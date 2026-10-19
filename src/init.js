@@ -1,5 +1,5 @@
 //configuracion del juego XD
-
+import Phaser from 'phaser';
 //importacion de las escenas del juego
 import Menu from './Menu.js';
 import Nivel1 from './nivel1.js';
