@@ -38,15 +38,15 @@ init(){
 }
 
 preload() {
-    this.load.image('fondo3', 'public/assets/backgroundrojo.jpg');
-    this.load.image('pared', 'public/assets/Pared.png');
-    this.load.image('enemigo', 'public/assets/enemigo.png');
-    this.load.audio('nivel3','public/assets/nivel3.mp3');
+    this.load.image('fondo3', '../public/assets/backgroundrojo.jpg');
+    this.load.image('pared', '../public/assets/Pared.png');
+    this.load.image('enemigo', '../public/assets/enemigo.png');
+    this.load.audio('nivel3','../public/assets/nivel3.mp3');
 
 
     this.load.font({
     key: 'Fuente',
-    url: 'public/assets/VCR_OSD_MONO_1.001.ttf',
+    url: '../public/assets/VCR_OSD_MONO_1.001.ttf',
     format: 'truetype'
 });
 
