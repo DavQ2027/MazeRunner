@@ -29,10 +29,10 @@ init(){
 }
 
 preload() {
-    this.load.image('fondo', 'assets/background.jpg');
-    this.load.image('pared', 'assets/Pared.png');
-    this.load.image('enemigo', 'assets/enemigo.png');
-    this.load.audio('nivel1','assets/nivel1.mp3');
+    this.load.image('fondo', 'public/assets/background.jpg');
+    this.load.image('pared', 'public/assets/Pared.png');
+    this.load.image('enemigo', 'public/assets/enemigo.png');
+    this.load.audio('nivel1','public/assets/nivel1.mp3');
 
 
     this.load.font({

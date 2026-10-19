@@ -16,10 +16,10 @@ init(datos){
 
 preload() {
     // Carga de recursos
-    this.load.image('fondoXD', 'assets/fondoverdewin.jpg');
+    this.load.image('fondoXD', 'public/assets/fondoverdewin.jpg');
     this.load.font({    
         key: 'Fuente',  
-        url: '../assets/VCR_OSD_MONO_1.001.ttf',
+        url: 'public//assets/VCR_OSD_MONO_1.001.ttf',
         format: 'truetype'
     });
 

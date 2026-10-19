@@ -30,10 +30,10 @@ init(){
 }
 
 preload() {
-    this.load.image('fondo2', '../assets/backgroundamarillo.jpg');
-    this.load.image('pared', 'assets/Pared.png');
-    this.load.image('enemigo', 'assets/enemigo.png');
-    this.load.audio('nivel2','../assets/nivel2.mp3');
+    this.load.image('fondo2', 'public/assets/backgroundamarillo.jpg');
+    this.load.image('pared', 'public/assets/Pared.png');
+    this.load.image('enemigo', 'public/assets/enemigo.png');
+    this.load.audio('nivel2','public/assets/nivel2.mp3');
 
 
     this.load.font({
