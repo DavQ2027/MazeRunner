@@ -15,7 +15,7 @@ init(datos){
 }
 
 preload() {
-    this.load.image('fondo', 'assets/background.jpg');
+   
         this.load.font({
     key: 'Fuente',
     url: '../assets/VCR_OSD_MONO_1.001.ttf',
@@ -26,7 +26,13 @@ this.load.audio('gameover', 'assets/gameover.mp3')
 
 }
 
-create() {  
+create() { 
+    const { width, height } = this.scale; 
+    const grid = this.add.graphics();
+        grid.lineStyle(1, 0x38bdf8, 0.08);
+        for (let x = 0; x <= width; x += 40) grid.lineBetween(x, 0, x, height);
+        for (let y = 0; y <= height; y += 40) grid.lineBetween(0, y, width, y);
+
     this.add.text(this.scale.width / 2, this.scale.height / 2.1 - 100, 'Game Over', {
         fontSize: '100px',
         color: '#ff0000',
